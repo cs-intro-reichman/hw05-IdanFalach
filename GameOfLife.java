@@ -96,8 +96,8 @@ public class GameOfLife {
 
         for (int i = 1; i < rows - 1; i++) {
             for (int j = 1; j < columns - 1; j++) {
-                int newValue = cellValue(board, i, j);
-                newBoard[i][j] = newValue;
+                int newCellValue = cellValue(board, i, j);
+                newBoard[i][j] = newCellValue;
             }
         }
 
@@ -125,10 +125,10 @@ public class GameOfLife {
         } else {
             if (livingNeighbors == 3) {
                 return 1;
+            } else {
+                return 0;
             }
         }
-
-        return 0;
     }
 
     // Counts and returns the number of living neighbors of the given cell
